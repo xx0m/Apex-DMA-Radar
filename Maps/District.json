@@ -1,0 +1,14 @@
+{
+  "mapID": [
+    "mp_rr_district"
+  ],
+  "x": 2048,
+  "y": 2048,
+  "scale": 0.04745,
+  "mapLayers": [
+    {
+      "minHeight": -100,
+      "filename": "Maps\\mp_rr_district.png"
+    }
+  ]
+}

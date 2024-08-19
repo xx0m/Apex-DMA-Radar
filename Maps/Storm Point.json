@@ -1,0 +1,14 @@
+{
+  "mapID": [
+    "mp_rr_tropic_island_mu2"
+  ],
+  "x": 2026,
+  "y": 2089,
+  "scale": 0.04,
+  "mapLayers": [
+    {
+      "minHeight": -100,
+      "filename": "Maps\\mp_rr_tropic_island_mu2.png"
+    }
+  ]
+}

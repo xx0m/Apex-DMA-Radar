@@ -1,0 +1,14 @@
+{
+  "mapID": [
+    "mp_rr_divided_moon_mu1"
+  ],
+  "x": 2145,
+  "y": 2072,
+  "scale": 0.0476,
+  "mapLayers": [
+    {
+      "minHeight": -100,
+      "filename": "Maps\\mp_rr_divided_moon_mu1.png"
+    }
+  ]
+}

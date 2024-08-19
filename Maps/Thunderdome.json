@@ -1,0 +1,14 @@
+{
+  "mapID": [
+    "mp_rr_thunderdome"
+  ],
+  "x": 2050,
+  "y": 2050,
+  "scale": 0.2505,
+  "mapLayers": [
+    {
+      "minHeight": -100,
+      "filename": "Maps\\mp_rr_thunderdome.png"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "mapID": [
+    "mp_rr_desertlands_hu"
+  ],
+  "x": 2050,
+  "y": 2050,
+  "scale": 0.0455,
+  "mapLayers": [
+    {
+      "minHeight": -100,
+      "filename": "Maps\\mp_rr_desertlands_hu.png"
+    }
+  ]
+}
