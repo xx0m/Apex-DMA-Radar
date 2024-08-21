@@ -91,7 +91,7 @@ namespace apex_dma_radar
             [WeaponID.Hemlock] = "Hemlock",
             [WeaponID.Kraber] = "Kraber",
             [WeaponID.LStar] = "L-STAR",
-            [WeaponID.Mastif] = "Mastif",
+            [WeaponID.Mastiff] = "Mastiff",
             [WeaponID.Mozamique] = "Mozamique",
             [WeaponID.Prowler] = "Prowler",
             [WeaponID.Peacekeeper] = "Peacekeeper",

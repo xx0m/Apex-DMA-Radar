@@ -812,7 +812,16 @@ namespace apex_dma_radar
 
         private void DrawPlayers(SKCanvas canvas)
         {
-            var localPlayer = this.LocalPlayer;
+            Player localPlayer = this.LocalPlayer;
+
+            if (localPlayer.IsDead)
+            {
+                if (Memory.Game.SpectatedPlayer is not null)
+                    localPlayer = Memory.Game.SpectatedPlayer;
+                else if (TeamManager.GetTeamMembers(localPlayer.TeamID).Count > 1)
+                    localPlayer = TeamManager.GetTeamMembers(localPlayer.TeamID)
+                        .FirstOrDefault(p => p != localPlayer && !p.IsDead && p.Health > 0);
+            }
 
             if (this.InGame && localPlayer is not null)
             {
@@ -831,6 +840,7 @@ namespace apex_dma_radar
 
                 foreach (var player in allPlayers) // Draw players
                 {
+                    int aimlineLength = 15;
                     var playerPos = player.Position;
                     var playerMapPos = playerPos.ToMapPos(_selectedMap);
                     var playerZoomedPos = playerMapPos.ToZoomedPos(mapParams);
@@ -839,9 +849,7 @@ namespace apex_dma_radar
                     {
                         X = playerZoomedPos.X,
                         Y = playerZoomedPos.Y
-                    };
-
-                    int aimlineLength = 15;
+                    };                    
 
                     if (!player.IsSkyDiving && !player.IsRespawning && !player.IsKnocked && player.Type is not PlayerType.Teammate && !player.IsLocalPlayer)
                     {
@@ -866,19 +874,19 @@ namespace apex_dma_radar
                     }
 
                     // Draw Player
-                    DrawPlayer(canvas, player, playerZoomedPos, aimlineLength, mouseOverGroup, localPlayerMapPos);
+                    DrawPlayer(canvas, player, localPlayer, playerZoomedPos, aimlineLength, mouseOverGroup, localPlayerMapPos);
                 }
 
             }
         }
 
-        private void DrawPlayer(SKCanvas canvas, Player player, MapPosition playerZoomedPos, int aimlineLength, int? mouseOverGrp, MapPosition localPlayerMapPos)
+        private void DrawPlayer(SKCanvas canvas, Player player, Player anchor, MapPosition playerZoomedPos, int aimlineLength, int? mouseOverGrp, MapPosition localPlayerMapPos)
         {
-            if (this.InGame && this.LocalPlayer is not null)
+            if (this.InGame && anchor is not null)
             {
                 var playerSettings = this.GetPlayerInfoSettings(player);
                 var height = playerZoomedPos.Height - localPlayerMapPos.Height;
-                var dist = Vector3.Distance(this.LocalPlayer.Position, player.Position).ToMeters();
+                var dist = Vector3.Distance(anchor.Position, player.Position).ToMeters();
                 var aimlineSettings = new AimlineSettings
                 {
                     Enabled = playerSettings.Aimline,
@@ -897,7 +905,7 @@ namespace apex_dma_radar
                 if (playerSettings.Height)
                     leftLines.Add($"{Math.Round(height)}");
 
-                if (playerSettings.Distance)
+                if (playerSettings.Distance && dist > 0)
                     belowLines.Add($"{Math.Round(dist)}m");
 
                 if (playerSettings.Flags)

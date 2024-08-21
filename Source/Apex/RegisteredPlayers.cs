@@ -188,7 +188,7 @@ namespace apex_dma_radar
                 {
                     var player = players[i];
 
-                    if (checkPos)
+                    if (checkPos && !player.IsLocalPlayer)
                     {
                         var basePointer = round1.AddEntry<ulong>(i, 0, Memory.ApexBase + Offsets.Miscellaneous.EntityList + (((uint)player.Index + 1) << 5));
                     }
@@ -246,15 +246,12 @@ namespace apex_dma_radar
 
                     try
                     {
-                        if (checkPos)
+                        if (checkPos && !player.IsLocalPlayer)
                         {
                             if (!scatterMap.Results[i][0].TryGetResult<ulong>(out var pointerBase) || pointerBase == 0)
                             {
                                 player.IsDead = true;
                                 player.IsActive = false;
-
-                                if (player.IsLocalPlayer)
-                                    throw new MatchEnded();
 
                                 Program.Log($"{player.Name} disconnected");
                                 continue;

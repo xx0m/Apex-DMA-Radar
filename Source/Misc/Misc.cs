@@ -165,7 +165,7 @@ namespace apex_dma_radar
         Hemlock = 96,
         Kraber = 98,
         LStar = 99,
-        Mastif = 101,
+        Mastiff = 101,
         Mozamique = 102,
         Prowler = 107,
         Peacekeeper = 109,
@@ -177,7 +177,7 @@ namespace apex_dma_radar
         Volt = 117,
         Repeater3030 = 118,
         CAR = 119,
-        Nemesis = 1120,
+        Nemesis = 120,
         Melee = 121,
         ThrowingKnife = 176
     }

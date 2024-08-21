@@ -2,12 +2,12 @@
 {
     public struct Miscellaneous
     {
-        public const uint LevelName = 0x17ec494; //[Miscellaneous]->LevelName
-        public const uint Gamemode = 0x02421110;    //mp_gamemode
-        public const uint LocalPlayer = 0x23e90b8; //[Miscellaneous]->LocalPlayer
-        public const uint EntityList = 0x1f15ec8; //[Miscellaneous]->cl_entitylist
-        public const uint NameList = 0xd3503c0; //[Miscellaneous]->NameList
-        public const uint ViewRender = 0x769b4d8; //[Miscellaneous]->ViewRender
+        public const uint LevelName = 0x17ec544; //[Miscellaneous]->LevelName
+        public const uint Gamemode = 0x02421250;    //mp_gamemode
+        public const uint LocalPlayer = 0x23e91f8; //[Miscellaneous]->LocalPlayer
+        public const uint EntityList = 0x1f15f88; //[Miscellaneous]->cl_entitylist
+        public const uint NameList = 0xd350450; //[Miscellaneous]->NameList
+        public const uint ViewRender = 0x769b558; //[Miscellaneous]->ViewRender
         public const uint ViewMatrix = 0x11a350; //[Miscellaneous]->ViewMatrix
     }
     
@@ -54,7 +54,7 @@
 
     public struct Glow
     {
-        public const uint Highlights = 0xb13c620; //HighlightSettings
+        public const uint Highlights = 0xb13c6a0; //HighlightSettings
         public const uint Enable = 0x26c; //Script_Highlight_GetCurrentContext
         public const uint ThroughWall = 0x26c; //Script_Highlight_SetVisibilityType
         public const uint Fix = 0x278;
@@ -64,7 +64,7 @@
 
     public struct Spectator
     {
-        public const uint List = 0x1f17ee8; //IDA signature >> [48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 FF ? ? 48 85 C0 74 ? 48 63 4E 38]
+        public const uint List = 0x1f17fa8; //IDA signature >> [48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 FF ? ? 48 85 C0 74 ? 48 63 4E 38]
         public const uint Aux = 0x974;
     }
 }

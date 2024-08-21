@@ -34,10 +34,7 @@ namespace apex_dma_radar
     public class ItemGlowSettings
     {
         public bool Enabled { get; set; }
-        //public int MinimumRarity { get; set; }
         public bool CustomColor { get; set; }
-        //public bool Weapons { get; set; }
-        //public bool Ammo { get; set; }
         public byte InsideFunction { get; set; }
         public byte OutlineFunction { get; set; }
         public byte OutlineRadius { get; set; }
@@ -218,7 +215,7 @@ namespace apex_dma_radar
                 this._itemGlowApplied = false;
             }
 
-            if ((!this._viewModelGlowApplied && viewModelSettings.Enabled) || this.RefreshViewModel)
+            if ((!this._viewModelGlowApplied && viewModelSettings.Enabled && !Memory.LocalPlayer.IsDead) || this.RefreshViewModel)
             {
                 var activeWeapon = this.GetLocalPlayerWeaponEntity();
 
@@ -229,7 +226,7 @@ namespace apex_dma_radar
                     this.RefreshViewModel = false;
                 }
             }
-            else if (this._viewModelGlowApplied && !viewModelSettings.Enabled)
+            else if (this._viewModelGlowApplied && !viewModelSettings.Enabled && !Memory.LocalPlayer.IsDead)
             {
                 var activeWeapon = this.GetLocalPlayerWeaponEntity();
 
@@ -423,6 +420,9 @@ namespace apex_dma_radar
         {
             var newGlowMode = this.GetPlayerGlowSettings(revert);
             var (newGlowColor, setting) = this.GetPlayerGlowColor(player);
+
+            if (!player.IsActive)
+                return;
 
             entries.Add(new ScatterWriteDataEntry<byte>(player.Base + Offsets.Glow.Highlight_ID + 0, (byte)setting));
             entries.Add(new ScatterWriteDataEntry<GlowMode>(this.HighlightSettings + Offsets.Glow.HighlightTypeSize * setting + 0x0, newGlowMode));
