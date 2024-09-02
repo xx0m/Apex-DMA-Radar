@@ -6,7 +6,7 @@
         public const uint Gamemode = 0x02421250;    //mp_gamemode
         public const uint LocalPlayer = 0x23e91f8; //[Miscellaneous]->LocalPlayer
         public const uint EntityList = 0x1f15f88; //[Miscellaneous]->cl_entitylist
-        public const uint NameList = 0xd350450; //[Miscellaneous]->NameList
+        public const uint NameList = 0xd388450; //[Miscellaneous]->NameList
         public const uint ViewRender = 0x769b558; //[Miscellaneous]->ViewRender
         public const uint ViewMatrix = 0x11a350; //[Miscellaneous]->ViewMatrix
     }
@@ -22,7 +22,7 @@
         public const uint WeaponHandle = 0x1944; //[RecvTable.DT_BaseCombatCharacter]->m_latestPrimaryWeapons
         public const uint OffWeaponHandle = 0x1954; //[RecvTable.DT_BaseCombatCharacter]->m_latestNonOffhandWeapons
         public const uint LastVisibleTime = 0x19a0; //[Miscellaneous]->CPlayer!lastVisibleTime
-        public const uint LastAimedAtTime = 0x19a8; //[Miscellaneous]->CWeaponX!lastCrosshairTargetTime
+        public const uint LastAimedAtTime = 0x19a4; //[Miscellaneous]->CWeaponX!lastCrosshairTargetTime
         public const uint TimeBase = 0x2088; //[DataMap.C_Player]->m_currentFramePlayer.timeBase
         public const uint LifeState = 0x0690; //[RecvTable.DT_Player]->m_lifeState
         public const uint Health = 0x0328; //[RecvTable.DT_Player]->m_iHealth

@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Buffers;
+using System.Diagnostics;
 using System.Text.Json.Serialization;
 
 namespace apex_dma_radar
@@ -40,7 +41,7 @@ namespace apex_dma_radar
         public byte OutlineRadius { get; set; }
         public byte Brightness { get; set; }
 
-        //[JsonConstructor]
+        [JsonConstructor]
         public ItemGlowSettings(bool enabled, bool customColor, byte insideFunction, byte outlineFunction, byte outlineRadius, byte brightness)
         {
             this.Enabled = enabled;
@@ -421,7 +422,7 @@ namespace apex_dma_radar
             var newGlowMode = this.GetPlayerGlowSettings(revert);
             var (newGlowColor, setting) = this.GetPlayerGlowColor(player);
 
-            if (!player.IsActive)
+            if (!player.IsActive || !Memory.LocalPlayer.IsActive)
                 return;
 
             entries.Add(new ScatterWriteDataEntry<byte>(player.Base + Offsets.Glow.Highlight_ID + 0, (byte)setting));
