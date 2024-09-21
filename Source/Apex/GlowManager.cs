@@ -239,7 +239,7 @@ namespace apex_dma_radar
                 }
             }
 
-            if (entries.Any())
+            if (entries.Any() && Memory.Level.IsPlayable)
                 Memory.WriteScatter(entries);
         }
 

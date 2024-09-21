@@ -179,7 +179,7 @@ namespace apex_dma_radar
         CAR = 119,
         Nemesis = 120,
         Melee = 121,
-        ThrowingKnife = 176
+        ThrowingKnife = 178
     }
     #endregion
 }

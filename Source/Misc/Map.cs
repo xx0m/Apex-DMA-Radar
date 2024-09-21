@@ -86,7 +86,6 @@ namespace apex_dma_radar
         {
             var x = (player.IsLocalPlayer ? player.Rotation.X : player.Yaw);
             var radians = x.ToRadians();
-            //SKPaint markerPaint, aimlinePaint;
             SKPaint markerPaint;
 
             if (mouseoverGrp == player.TeamID)

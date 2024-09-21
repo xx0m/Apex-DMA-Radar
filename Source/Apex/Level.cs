@@ -43,6 +43,7 @@ namespace apex_dma_radar
             if (_swLevelRefresh.ElapsedMilliseconds > 125)
             {
                 this.UpdateLevel();
+                this.UpdateGamemode();
                 this._swLevelRefresh.Restart();
             }
 

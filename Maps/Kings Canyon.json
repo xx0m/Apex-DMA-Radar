@@ -1,14 +1,14 @@
 {
   "mapID": [
-    "mp_rr_canyonlands"
+    "mp_rr_canyonlands_hu"
   ],
-  "x": 2048,
-  "y": 2048,
-  "scale": 0.04745,
+  "x": 1880,
+  "y": 2195,
+  "scale": 0.04995,
   "mapLayers": [
     {
       "minHeight": -100,
-      "filename": "Maps\\mp_rr_canyonlands.png"
+      "filename": "Maps\\mp_rr_canyonlands_hu.png"
     }
   ]
 }
