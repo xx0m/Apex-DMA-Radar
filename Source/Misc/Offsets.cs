@@ -5,10 +5,10 @@
         public const uint LevelName = 0x18356c4; //[Miscellaneous]->LevelName
         public const uint Gamemode = 0x0246c460;    //mp_gamemode
         public const uint LocalPlayer = 0x24342B8; //[Miscellaneous]->LocalPlayer
-        public const uint EntityList = 0x01f60fa0 + 0xA8; //[Miscellaneous]->cl_entitylist
-        public const uint NameList = 0xd425fe0; //[Miscellaneous]->NameList
-        public const uint ViewRender = 0x76e8738; //[Miscellaneous]->ViewRender
-        public const uint ViewMatrix = 0x11a350; //[Miscellaneous]->ViewMatrix
+        public const uint EntityList = 0x1F61048; //[Miscellaneous]->cl_entitylist
+        public const uint NameList = 0xD426160; //[Miscellaneous]->NameList
+        public const uint ViewRender = 0x76E88B8; //[Miscellaneous]->ViewRender
+        public const uint ViewMatrix = 0x11A350; //[Miscellaneous]->ViewMatrix
     }
     
     public struct NameList
@@ -56,10 +56,10 @@
     {
         public const uint HighlightTypeSize = 0x34;
         public const uint ThroughWall = 0x26c; //Script_Highlight_SetVisibilityType
-        public const uint Fix = 0x268;
+        public const uint Fix = 0x278;
         public const uint Highlight_ID = 0x29c; //[DT_HighlightSettings].m_highlightServerActiveStates
-        public const uint Highlights = 0xB1DA220; //HighlightSettings
-        public const uint Enable = 0x28C; //Script_Highlight_GetCurrentContext
+        public const uint Highlights = 0xB1DA3A0; //HighlightSettings
+        public const uint Enable = 0x27c; //Script_Highlight_GetCurrentContext
     }
 
     public struct Spectator
